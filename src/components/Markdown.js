@@ -9,5 +9,5 @@ export default function Markdown({ markdown }) {
 }
 
 Markdown.propTypes = {
-  markdown: PropTypes.string.isRequired
+  markdown: PropTypes.object.isRequired
 };

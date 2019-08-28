@@ -1,26 +1,21 @@
-// import React, { PureComponent } from 'react';
-// //import Preview from './Preview';
-// import Editor from './Editor';
-// import styles from './Document.css';
+import React from 'react';
+import Preview from './Preview';
+import Editor from './Editor';
+import styles from './Document.css';
+import PropTypes from 'prop-types';
 
-// export default class Document extends PureComponent {
-//   state = {
-//     markdown: '# Hi there'
-//   };
+export default function Document({ markdown, updateMarkdown }) {
+  return (
+      <>
+        <div className={styles.Document}>
+          <Editor markdown={markdown} updateMarkdown={updateMarkdown} />
+          <Preview markdown={markdown} />
+        </div>
+      </>
+  );
+}
 
-//   updateMarkdown = ({ target }) => {
-//     this.setState({ markdown: target.value });
-//   };
-
-//   render() {
-//     const { markdown } = this.state;
-//     return (
-//       <>
-//         <div className={styles.Document}>
-//           <Editor markdown={markdown} updateMarkdown={this.updateMarkdown} />
-//           {/* <Preview markdown={markdown} /> */}
-//         </div>
-//       </>
-//     );
-//   }
-// }
+Document.propTypes = {
+  markdown: PropTypes.string.isRequired,
+  updateMarkdown: PropTypes.func.isRequired
+};
