@@ -9,3 +9,7 @@ export const getMarkdownList = state => {
 export const getDocument = state => {
   return state.markdownReducer.documents[state.markdownReducer.index];
 };
+
+export const saveDocument = (state) => {
+  return state.markdownReducer.documents;
+};
