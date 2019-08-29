@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function List({ markdowns, onDelete }) {
+function List({ markdowns, onDelete, onLoad }) {
   const markdownElements = markdowns.map((markdown) => (
     <li key={markdown.id}>
-      <a>{markdown.title}</a>
+      <button onClick={onLoad}>{markdown.title}</button>
       <button onClick={onDelete}>Delete</button>
     </li>
   ));
@@ -17,7 +17,8 @@ function List({ markdowns, onDelete }) {
 
 List.propTypes = {
   markdowns: PropTypes.arrayOf(PropTypes.string).isRequired,
-  onDelete: PropTypes.func.isRequired
+  onDelete: PropTypes.func.isRequired,
+  onLoad: PropTypes.func.isRequired
 };
 
 export default List;
