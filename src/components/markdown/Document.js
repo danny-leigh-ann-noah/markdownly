@@ -4,18 +4,18 @@ import Editor from './Editor';
 import styles from './Document.css';
 import PropTypes from 'prop-types';
 
-export default function Document({ markdown, updateMarkdown }) {
+export default function Document({ document, updateBody }) {
   return (
       <>
         <div className={styles.Document}>
-          <Editor markdown={markdown} updateMarkdown={updateMarkdown} />
-          <Preview markdown={markdown} />
+          <Editor document={document} updateBody={updateBody} />
+          <Preview markdown={document.body} />
         </div>
       </>
   );
 }
 
 Document.propTypes = {
-  markdown: PropTypes.string.isRequired,
-  updateMarkdown: PropTypes.func.isRequired
+  updateBody: PropTypes.func.isRequired,
+  document: PropTypes.object.isRequired
 };

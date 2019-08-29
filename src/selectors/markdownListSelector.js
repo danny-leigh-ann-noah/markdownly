@@ -1,3 +1,3 @@
 export const getMarkdownList = state => {
-  return state.markdownListReducer.markdownFiles;
+  return state.markdownReducer.documents;
 };
