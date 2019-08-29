@@ -1,14 +1,14 @@
-import { getMarkdown } from './markdownSelector';
+import { getIndex } from './markdownSelector';
 
-describe('markdown', () => {
-  it('gets markdown from redux state', () => {
+describe('index', () => {
+  it('gets index from redux state', () => {
     const state = {
       markdownReducer: {
-        markdown: 'hello'
+        index: 0
       }
     };
 
-    const markdown = getMarkdown(state);
-    expect(markdown).toEqual('hello');
+    const index = getIndex(state);
+    expect(index).toEqual(0);
   });
 });
