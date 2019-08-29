@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-function AddDocument({ title, onSubmit }) {
+function AddDocument({ onSubmit }) {
+  const [title, setTitle] = useState('');
+
   return (
-    <form onSubmit={onSubmit}>
-      <input type="text" name={title} />
+    <form onSubmit={(e) => onSubmit(e, title)}>
+      <input type="text" value={title} onChange={(e) => setTitle(e.target.value)}/>
       <button>Add Document</button>
     </form>
   );

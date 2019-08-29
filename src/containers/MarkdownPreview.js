@@ -15,9 +15,9 @@ const mapDispatchToProps = dispatch => ({
   updateDocumentBody({ target }) {
     dispatch(updateDocumentBody(target.value));
   },
-  saveDocument(event) {
+  saveDocument(event, title) {
     event.preventDefault();
-    dispatch(saveDocument(event.target.value));
+    dispatch(saveDocument(title));
   }
   
 });

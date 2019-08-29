@@ -23,14 +23,14 @@ describe('indexReducer', () => {
   });
 
   it('updates the document array state when it gets an SAVE_DOCUMENT action', () => {
-    const state = { documents: [{ id: 'test', title: 'test', body: 'test' }] };
-    const action = saveDocument({ id: 'test 2', title: 'test 2', body: 'test 2' });
+    const state = { documents: [{ id: 0, title: 'test', body: '' }] };
+    const action = saveDocument('test 2');
 
     const newState = reducer(state, action);
 
     expect(newState).toEqual({ documents: [
-      { id: 'test', title: 'test', body: 'test' },
-      { id: 'test 2', title: 'test 2', body: 'test 2' }
+      { id: 0, title: 'test', body: '' },
+      { id: 1, title: 'test 2', body: '' }
     ] });
   });
 
