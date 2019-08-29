@@ -1,15 +1,20 @@
 import { connect } from 'react-redux';
 import Document from '../components/markdown/Document';
-import { getMarkdown } from '../selectors/markdownSelector';
-import { updateMarkdown } from '../actions/updateMarkdown';
+import { getIndex, getDocument } from '../selectors/markdownSelector';
+import { updateIndex, updateDocumentBody } from '../actions/updateIndex';
+
 
 const mapStateToProps = state => ({
-  markdown: getMarkdown(state)
+  index: getIndex(state),
+  document: getDocument(state)
 });
 
 const mapDispatchToProps = dispatch => ({
-  updateMarkdown({ target }) {
-    dispatch(updateMarkdown(target.value));
+  updateIndex({ target }) {
+    dispatch(updateIndex(target.value));
+  },
+  updateDocumentBody({ target }) {
+    dispatch(updateDocumentBody(target.value));
   }
 });
 
