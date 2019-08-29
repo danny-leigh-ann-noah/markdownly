@@ -16,7 +16,7 @@ export default function reducer(state = initialState, action) {
       return { ...state, documents: newDocuments };
     }
     case SAVE_DOCUMENT: 
-      return { ...state, documents: [...state.documents, state.documents.push(action.payload)] };
+      return { ...state, documents: [...state.documents, action.payload] };
     default: 
       return state;
   }
