@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function List({ markdownFiles, onDelete, onLoad }) {
-  console.log(markdownFiles);
   const markdownElements = markdownFiles.map((markdown) => (
     <li key={markdown.id}>
       <button onClick={onLoad}>{markdown.title}</button>
