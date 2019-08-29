@@ -12,7 +12,7 @@ export default function reducer(state = initialState, action) {
     case UPDATE_BODY: {
       const body = action.payload;
       const newDocuments = [...state.documents];
-      newDocuments[state.index] = { ...state[state.index], body };
+      newDocuments[state.index] = { ...state.documents[state.index], body };
       return { ...state, documents: newDocuments };
     }
     default: 

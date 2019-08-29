@@ -3,7 +3,6 @@ import Document from '../components/markdown/Document';
 import { getIndex, getDocument } from '../selectors/markdownSelector';
 import { updateIndex, updateDocumentBody } from '../actions/updateIndex';
 
-
 const mapStateToProps = state => ({
   index: getIndex(state),
   document: getDocument(state)
