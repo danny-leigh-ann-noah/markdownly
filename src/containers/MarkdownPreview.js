@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import Document from '../components/markdown/Document';
 import { getIndex, getDocument } from '../selectors/markdownSelector';
-import { updateIndex, updateDocumentBody } from '../actions/updateIndex';
+import { updateIndex, updateDocumentBody, saveDocument } from '../actions/updateIndex';
 
 const mapStateToProps = state => ({
   index: getIndex(state),
@@ -14,7 +14,12 @@ const mapDispatchToProps = dispatch => ({
   },
   updateDocumentBody({ target }) {
     dispatch(updateDocumentBody(target.value));
+  },
+  saveDocument(event) {
+    event.preventDefault();
+    dispatch(saveDocument(event.target.value));
   }
+  
 });
 
 export default connect(

@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function AddDocument({ title, submitHandle }) {
+function AddDocument({ title, onSubmit }) {
   return (
-    <form onSubmit={submitHandle}>
-      <input type="text" value={title} name={title} />
+    <form onSubmit={onSubmit}>
+      <input type="text" name={title} />
       <button>Add Document</button>
     </form>
   );
@@ -12,7 +12,7 @@ function AddDocument({ title, submitHandle }) {
 
 AddDocument.propTypes = {
   title: PropTypes.string.isRequired,
-  submitHandle: PropTypes.func.isRequired
+  onSubmit: PropTypes.func.isRequired
 };
 
 export default AddDocument;
