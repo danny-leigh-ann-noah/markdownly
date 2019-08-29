@@ -1,5 +1,5 @@
 import reducer from './markdownReducer';
-import { updateIndex } from '../actions/updateIndex';
+import { updateIndex, saveDocument } from '../actions/updateIndex';
 
 describe('indexReducer', () => {
   it('returns the same state when it does not understand action', () => {
@@ -21,4 +21,17 @@ describe('indexReducer', () => {
 
     expect(newState).toEqual({ index: 3 });
   });
+
+  it('updates the document array state when it gets an SAVE_DOCUMENT action', () => {
+    const state = { documents: [{ id: 'test', title: 'test', body: 'test' }] };
+    const action = saveDocument({ id: 'test 2', title: 'test 2', body: 'test 2' });
+
+    const newState = reducer(state, action);
+
+    expect(newState).toEqual({ documents: [
+      { id: 'test', title: 'test', body: 'test' },
+      { id: 'test 2', title: 'test 2', body: 'test 2' }
+    ] });
+  });
+
 });
