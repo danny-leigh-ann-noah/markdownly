@@ -11,7 +11,7 @@ export const updateDocumentBody = body => ({
 });
 
 export const SAVE_DOCUMENT = 'SAVE_DOCUMENT';
-export const saveDocument = document => ({
+export const saveDocument = title => ({
   type: SAVE_DOCUMENT,
-  payload: document
+  payload: title
 });
