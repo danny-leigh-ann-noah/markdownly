@@ -1,5 +1,4 @@
-import { UPDATE_INDEX } from '../actions/updateIndex';
-import { UPDATE_BODY } from '../actions/updateDocumentBody';
+import { UPDATE_INDEX, UPDATE_BODY } from '../actions/updateIndex';
 
 const initialState = {
   index: 0,

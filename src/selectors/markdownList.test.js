@@ -1,4 +1,4 @@
-import { getMarkdownList } from './markdownListSelector';
+import { getMarkdownList } from './markdownSelector';
 
 describe('markdownList', () => {
   it('gets markdownList from redux state', () => {

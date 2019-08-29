@@ -1,9 +1,8 @@
 import { connect } from 'react-redux';
 import Document from '../components/markdown/Document';
-import { getIndex } from '../selectors/markdownSelector';
-import { updateIndex } from '../actions/updateIndex';
-import { getDocument } from '../selectors/markdownDocumentSelector';
-import { updateDocumentBody } from '../actions/updateDocumentBody';
+import { getIndex, getDocument } from '../selectors/markdownSelector';
+import { updateIndex, updateDocumentBody } from '../actions/updateIndex';
+
 
 const mapStateToProps = state => ({
   index: getIndex(state),
