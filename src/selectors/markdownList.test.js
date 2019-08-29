@@ -3,7 +3,7 @@ import { getMarkdownList } from './markdownListSelector';
 describe('markdownList', () => {
   it('gets markdownList from redux state', () => {
     const state = {
-      markdownListReducer: { documents: [{
+      markdownReducer: { documents: [{
         id: '1',
         title: 'Test',
         body: 'Test 1'
