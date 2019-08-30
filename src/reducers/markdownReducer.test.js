@@ -1,5 +1,5 @@
 import reducer from './markdownReducer';
-import { updateIndex, saveDocument } from '../actions/updateIndex';
+import { updateIndex, saveDocument, deleteDocument } from '../actions/updateIndex';
 
 describe('indexReducer', () => {
   it('returns the same state when it does not understand action', () => {
@@ -34,4 +34,19 @@ describe('indexReducer', () => {
     ] });
   });
 
+  it('updates the document array state when it gets an DELETE_DOCUMENT action', () => {
+    const state = { documents: [
+      { id: 1, title: 'test 0', body: '' },
+      { id: 2, title: 'test 1', body: '' },
+      { id: 3, title: 'test 2', body: '' }
+    ] };
+    const action = deleteDocument(1);
+
+    const newState = reducer(state, action);
+
+    expect(newState).toEqual({ documents: [
+      { id: 1, title: 'test 0', body: '' },
+      { id: 3, title: 'test 2', body: '' }
+    ] });
+  });
 });
