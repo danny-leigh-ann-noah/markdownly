@@ -1,4 +1,4 @@
-import { UPDATE_INDEX, UPDATE_BODY, SAVE_DOCUMENT } from '../actions/updateIndex';
+import { UPDATE_INDEX, UPDATE_BODY, SAVE_DOCUMENT, DELETE_DOCUMENT } from '../actions/updateIndex';
 
 const initialState = {
   index: 0,
@@ -17,6 +17,8 @@ export default function reducer(state = initialState, action) {
     }
     case SAVE_DOCUMENT: 
       return { ...state, documents: [...state.documents, { id: state.documents.length, title: action.payload, body: '' }] };
+    case DELETE_DOCUMENT:
+      return { ...state, documents:[...state.documents.slice(0, action.payload),  ...state.documents.slice(action.payload + 1)] };
     default: 
       return state;
   }

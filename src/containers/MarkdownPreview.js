@@ -18,8 +18,7 @@ const mapDispatchToProps = dispatch => ({
   saveDocument(event, title) {
     event.preventDefault();
     dispatch(saveDocument(title));
-  }
-  
+  } 
 });
 
 export default connect(

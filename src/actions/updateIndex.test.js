@@ -1,4 +1,4 @@
-import { updateIndex, saveDocument, UPDATE_INDEX, SAVE_DOCUMENT } from './updateIndex';
+import { updateIndex, saveDocument, UPDATE_INDEX, SAVE_DOCUMENT, deleteDocument, DELETE_DOCUMENT } from './updateIndex';
 
 describe('updateIndex', () => {
   it('creates an UPDATE_INDEX action', () => {
@@ -19,4 +19,18 @@ describe('updateIndex', () => {
     });
   });
 
+  it('creates an DELETE_DOCUMENT action', () => {
+    const state = [
+      { id: 1, title: 'title test', body: 'body test' }, 
+      { id: 2, title: 'title test', body: 'body test' },
+      { id: 3, title: 'title test', body: 'body test' }
+    ];
+    const action = deleteDocument(state[1]);
+  
+
+    expect(action).toEqual({
+      type: DELETE_DOCUMENT,
+      payload: { id: 2, title: 'title test', body: 'body test' }
+    });
+  });
 });
