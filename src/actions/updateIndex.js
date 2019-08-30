@@ -15,3 +15,9 @@ export const saveDocument = title => ({
   type: SAVE_DOCUMENT,
   payload: title
 });
+
+export const DELETE_DOCUMENT = 'DELETE_DOCUMENT';
+export const deleteDocument = index => ({
+  type: DELETE_DOCUMENT,
+  payload: index
+});
